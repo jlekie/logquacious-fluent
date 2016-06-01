@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '4'
+env:
+- CXX=g++-4.8
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+before_script:
+- npm install -g gulp
+script: gulp build
+before_deploy: cd dist
+deploy:
+  provider: npm
+  email: joe.lekie@gmail.com
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: W0gt+IiUf41rZBaM58caLvFwvpIQRGNI0fNPff47xHN6X0acHA6oT5twZ8VkBH5IgViXuMZzBYCXWKryv2unyPTW5AxiSdNawW1su1bPvwFKWVh0/BnorwZhMad0mSVQWU8A7Zx3Dg54bOlvbAlVc+x1Gu20JtP7IFWa4LeQ9Rt9g4hSi/LdJlesv8wqQ+DaclLq0VKaXq/Qm7pzKVzVXnp7l6Q/lxOa0bDhueoLMgXbSxg9EuaxydBg/T7gUeOebiqOpPPErYA4YfK8mNvZe2lTVy8x/h33TXaDRNcZwE7aIUEasXq7hz+pMA8vrRGmvP2KOizJiw727lz4oQvpvbpx5zqN7cs/rUo/viotZ6cO5RIfFqo+xkC8U6GlD/24X9Eq95SkfcEzdH+eU2HqSrkIqNIbTcSoaCBXlyJcVNmKQJ0JSQb2h2W8Ymot0uWO2QgQi2HkyBWKeEXkxy/bvZRE9kFQfMvowbsnyMXAxmBNdVrU6rUN/NsBY0aq+0OAgb7Q3ZPVvVU69T8vRmsLotYm3Hf/vAZ53Ulz4NZuTKUxj+is5q+mDUrjKWpMD50PpIhRRSDzx2HX0pbcSyUK4ip+4oJj2H7UzknFziT19oZODMHa7EospzKaHwSAv2oLOT+TCXm8tRPKIWfFvR2XJBTvMG77HfGsaZ3nwr4NyjM=
