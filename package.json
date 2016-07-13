@@ -1,7 +1,7 @@
 {
     "name": "logquacious-fluent",
     "description": "Fluentd channel plugin for Logquacious",
-    "version": "1.0.0",
+    "version": "1.0.1",
     
     "author": {
         "name": "Joe Lekie",
